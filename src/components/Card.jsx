@@ -4,11 +4,11 @@ const Card = ({ flag, countryName, population, region, capital, area }) => {
   return (
     <div className="w-full max-w-[448px]  mx-auto  min-h-[404px] md:min-h-[339px] rounded-lg shadow-lg cursor-pointer  flex flex-col transition-all duration-300 ease-in-out transform hover:scale-105">
       {/* Flag Image */}
-      <div className="w-full h-1/2 max-h-[225px]">
+      <div className="w-full h-[225px] md:h-[160px]">
         <img
           src={flag}
           alt={`${countryName} flag`}
-          className="w-full h-full rounded-t-lg"
+          className="w-full h-full rounded-t-lg object-fill"
         />
       </div>
 
