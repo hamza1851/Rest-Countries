@@ -1,6 +1,6 @@
 import React from "react"
 
-const Card = ({ flag, countryName, population, region, capital }) => {
+const Card = ({ flag, countryName, population, region, capital, area }) => {
   return (
     <div className="w-full max-w-[448px]  mx-auto  min-h-[404px] md:min-h-[339px] rounded-lg shadow-lg cursor-pointer  flex flex-col transition-all duration-300 ease-in-out transform hover:scale-105">
       {/* Flag Image */}
@@ -24,6 +24,9 @@ const Card = ({ flag, countryName, population, region, capital }) => {
         </p>
         <p className="text-sm mb-1">
           <span className="font-bold">Capital:</span> {capital?.[0] ?? "N/A"}
+        </p>
+        <p className="text-sm mb-1">
+          <span className="font-bold">Area:</span> {area ? area : "N/A"}
         </p>
       </div>
     </div>
