@@ -4,7 +4,7 @@ import { MdOutlineDarkMode } from "react-icons/md"
 const Navbar = () => {
   return (
     <>
-      <nav className="shadow-xl flex items-center p-5 mb-8 px-auto">
+      <nav className="shadow-lg flex items-center p-5 mb-8 px-auto">
         <h1 className="ml-20 mr-auto font-bold text-2xl">
           Where in the world ?
         </h1>

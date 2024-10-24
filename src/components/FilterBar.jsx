@@ -16,7 +16,7 @@ const FilterBar = () => {
   }
 
   return (
-    <div className="p-4 max-w-32 max-h-14 flex items-center gap-4 shadow-2xl rounded-md md:min-w-52">
+    <div className="p-4 max-w-32 max-h-14 flex items-center gap-4 shadow-lg rounded-md md:min-w-52">
       <select
         className="w-full bg-transparent focus:outline-none"
         onChange={handleRegionChange}
