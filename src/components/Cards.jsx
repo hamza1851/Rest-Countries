@@ -3,8 +3,14 @@ import Card from "./Card"
 import { useAppContext } from "../context/AppContext"
 
 const Cards = () => {
-  const { searchTerm, countryData, selectedRegion, selectedSubregion } =
-    useAppContext()
+  const {
+    searchTerm,
+    countryData,
+    selectedRegion,
+    selectedSubregion,
+    sortBy,
+    sortOrder,
+  } = useAppContext()
 
   let filteredCountries = countryData
 
@@ -42,6 +48,18 @@ const Cards = () => {
     return <p>No countries match your search criteria.</p>
   }
 
+  // Sort by area or population
+  if (sortBy === "area") {
+    filteredCountries = filteredCountries.sort((a, b) =>
+      sortOrder === "asc" ? a.area - b.area : b.area - a.area
+    )
+  } else if (sortBy === "population") {
+    filteredCountries = filteredCountries.toSorted((a, b) =>
+      sortOrder === "asc"
+        ? a.population - b.population
+        : b.population - a.population
+    )
+  }
   return (
     <section className="max-w-[1150px] mx-auto grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
       {filteredCountries.map((country, idx) => (
@@ -52,6 +70,7 @@ const Cards = () => {
           population={country.population}
           region={country.region}
           capital={country.capital}
+          area={country.area}
         />
       ))}
     </section>
