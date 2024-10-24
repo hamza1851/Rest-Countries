@@ -14,7 +14,8 @@ export const AppProvider = ({ children }) => {
   const [countryData, setCountryData] = useState([]) //Contains countries data
   const [selectedRegion, setSelectedRegion] = useState("") // Track the selected region
   const [regions, setRegions] = useState([]) // Track available regions
-
+  const [subregions, setSubregions] = useState([]) // Track available subregions
+  const [selectedSubregion, setselectedSubregion] = useState("") // Track selected subregion
   useEffect(() => {
     const fetchCountries = async () => {
       const resp = await fetch("https://restcountries.com/v3.1/all")
@@ -23,6 +24,7 @@ export const AppProvider = ({ children }) => {
 
       const uniqueRegions = [...new Set(data.map((country) => country.region))]
       setRegions(uniqueRegions)
+
     }
     fetchCountries()
   }, [])
@@ -36,6 +38,10 @@ export const AppProvider = ({ children }) => {
         selectedRegion,
         setSelectedRegion,
         regions,
+        subregions,
+        setSubregions,
+        selectedSubregion,
+        setselectedSubregion,
       }}
     >
       {children}
