@@ -3,14 +3,21 @@ import Card from "./Card"
 import { useAppContext } from "../context/AppContext"
 
 const Cards = () => {
-  const { searchTerm, countryData, selectedRegion } = useAppContext()
+  const { searchTerm, countryData, selectedRegion, selectedSubregion } =
+    useAppContext()
 
   let filteredCountries = countryData
 
   if (selectedRegion) {
-    filteredCountries = filteredCountries.filter(
-      (country) => country.region === selectedRegion
-    )
+    if (selectedSubregion) {
+      filteredCountries = filteredCountries.filter(
+        (country) => country.subregion === selectedSubregion
+      )
+    } else {
+      filteredCountries = filteredCountries.filter(
+        (country) => country.region === selectedRegion
+      )
+    }
   }
 
   if (searchTerm) {
