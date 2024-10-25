@@ -3,7 +3,6 @@ import { useAppContext } from "../context/AppContext"
 
 const Subregion = () => {
   const {
-    regions,
     subregions,
     setSubregions,
     selectedRegion,
