@@ -8,7 +8,7 @@ const Cards = () => {
     <section className="max-w-[1150px] mx-auto grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
       {filteredCountries.map((country, idx) => (
         <Card
-          key={idx}
+          key={country.ccn3}
           flag={country.flags.svg}
           countryName={country.name.common}
           population={country.population}
