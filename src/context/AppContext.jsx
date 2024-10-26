@@ -16,9 +16,9 @@ export const AppProvider = ({ children }) => {
   const [regions, setRegions] = useState([]) // Track available regions
   const [subregions, setSubregions] = useState([]) // Track available subregions
   const [selectedSubregion, setselectedSubregion] = useState("") // Track selected subregion
-  const [sortBy, setSortBy] = useState("")
-  const [sortOrder, setSortOrder] = useState("")
-  const [isDark, setIsDark] = useState(false)
+  const [sortBy, setSortBy] = useState("") //Track sortBy "Area" or "Population"
+  const [sortOrder, setSortOrder] = useState("") // Track "asc" or "desc"
+  const [isDark, setIsDark] = useState(false) // Track darkTheme toggling
 
   const toggleTheme = () => {
     setIsDark((prevState) => !prevState)

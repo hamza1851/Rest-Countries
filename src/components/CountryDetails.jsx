@@ -21,14 +21,13 @@ const CountryDetails = () => {
         const res = await fetch(`https://restcountries.com/v3.1/name/${id}`)
         const data = await res.json()
 
-        setCountry(data[0]) // Set the first country in the array
+        setCountry(data[0])
       } catch (error) {
         console.log(error)
       }
     }
     fetchCountryData()
-  }, [id]) // Add id to dependency array
-
+  }, [id]) //Id as deps to reconstruct according to search param
   return (
     <div className="w-full">
       {country ? (
