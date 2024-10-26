@@ -18,6 +18,14 @@ export const AppProvider = ({ children }) => {
   const [selectedSubregion, setselectedSubregion] = useState("") // Track selected subregion
   const [sortBy, setSortBy] = useState("")
   const [sortOrder, setSortOrder] = useState("")
+  const [isDark, setIsDark] = useState(false)
+
+  const toggleTheme = () => {
+    setIsDark((prevState) => !prevState)
+    document.body.classList.toggle("dark-mode", !isDark)
+    document.body.classList.toggle("light-mode", isDark)
+  }
+
   useEffect(() => {
     const fetchCountries = async () => {
       const resp = await fetch("https://restcountries.com/v3.1/all")
@@ -47,6 +55,8 @@ export const AppProvider = ({ children }) => {
         setSortBy,
         sortOrder,
         setSortOrder,
+        isDark,
+        toggleTheme,
       }}
     >
       {children}

@@ -2,7 +2,7 @@ import React from "react"
 import { useAppContext } from "../context/AppContext"
 
 const FilterBar = () => {
-  const { regions, setSelectedRegion, setselectedSubregion, setSubregions } =
+  const { regions, setSelectedRegion, setselectedSubregion, setSubregions, isDark } =
     useAppContext()
 
   const handleRegionChange = (event) => {
@@ -16,7 +16,11 @@ const FilterBar = () => {
   }
 
   return (
-    <div className="p-4 max-w-32 max-h-14 flex items-center gap-4 shadow-lg rounded-md md:min-w-52">
+    <div
+      className={`p-4 max-w-32 max-h-14 flex items-center gap-4 shadow-lg rounded-md md:min-w-52 ${
+        isDark ? "bg-[#2B3945]" : "bg-[#ffff]"
+      }`}
+    >
       <select
         className="w-full bg-transparent focus:outline-none"
         onChange={handleRegionChange}

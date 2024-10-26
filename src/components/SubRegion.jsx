@@ -8,6 +8,7 @@ const Subregion = () => {
     selectedRegion,
     setselectedSubregion,
     countryData,
+    isDark,
   } = useAppContext()
 
   useEffect(() => {
@@ -28,7 +29,11 @@ const Subregion = () => {
   }
 
   return (
-    <div className="p-4 max-w-32 max-h-14 flex items-center gap-4 shadow-lg rounded-md md:min-w-52">
+    <div
+      className={`p-4 max-w-32 max-h-14 flex items-center gap-4 shadow-lg rounded-md md:min-w-52 ${
+        isDark ? "bg-[#2B3945]" : "bg-[#ffff]"
+      }`}
+    >
       <select
         className="w-full bg-transparent focus:outline-none"
         onChange={handleSubregionChange}

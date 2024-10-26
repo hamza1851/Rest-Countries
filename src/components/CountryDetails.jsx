@@ -3,8 +3,10 @@ import { useNavigate, useParams } from "react-router-dom"
 import { IoIosArrowRoundBack } from "react-icons/io"
 import Spinner from "./Spinner"
 import GetBorders from "./GetBorders"
+import { useAppContext } from "../context/AppContext"
 
 const CountryDetails = () => {
+  const { isDark } = useAppContext()
   const [country, setCountry] = useState(null)
   const navigate = useNavigate()
   const { id } = useParams()
@@ -32,7 +34,9 @@ const CountryDetails = () => {
       {country ? (
         <section className="w-4/5 max-w-6xl mx-auto">
           <div
-            className="cursor-pointer w-28 p-2 text-center mb-8 rounded-lg shadow-lg flex justify-center gap-2 border-slate-600"
+            className={`cursor-pointer w-28 p-2 text-center mb-8 rounded-lg shadow-lg flex justify-center gap-2 ${
+              isDark ? "bg-[#2B3945]" : "bg-[#ffff]"
+            }`}
             onClick={handleBackBtn}
           >
             <IoIosArrowRoundBack />

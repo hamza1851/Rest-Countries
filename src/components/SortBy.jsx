@@ -3,7 +3,7 @@ import { GoSortAsc, GoSortDesc } from "react-icons/go"
 import { useAppContext } from "../context/AppContext"
 
 const SortBy = () => {
-  const { setSortBy, setSortOrder } = useAppContext()
+  const { setSortBy, setSortOrder, isDark } = useAppContext()
 
   const handleSortChange = (sortField) => {
     setSortBy(sortField) // Set the field to sort by (e.g., 'area' or 'population')
@@ -14,7 +14,11 @@ const SortBy = () => {
   }
 
   return (
-    <div className="p-4 max-w-32 max-h-14 flex items-center gap-4 shadow-lg rounded-md md:min-w-52">
+    <div
+      className={`p-4 max-w-32 max-h-14 flex items-center gap-4 shadow-lg rounded-md md:min-w-52 ${
+        isDark ? "bg-[#2B3945]" : "bg-[#ffff]"
+      }`}
+    >
       <select
         name="SortBy"
         id="sortBy"
