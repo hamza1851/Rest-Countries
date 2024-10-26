@@ -6,7 +6,7 @@ import SortBy from "./SortBy"
 
 const SearchSection = () => {
   return (
-    <div className="max-w-[80%] mb-12 mx-auto p-2 px-0 md:flex justify-between gap-4 md:gap-0 ">
+    <div className="max-w-6xl mb-12 mx-auto p-2 px-0 md:flex justify-between gap-4 md:gap-0 ">
       <SearchField />
       <SortBy />
       <Subregion />

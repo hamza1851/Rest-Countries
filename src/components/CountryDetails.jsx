@@ -39,8 +39,12 @@ const CountryDetails = () => {
             Back
           </div>
           <div className="md:flex md:justify-between">
-            <div className="w-full md:w-[45%]">
-              <img src={country.flags.svg} alt="" className="w-full" />
+            <div className="w-full md:w-[45%] mb-8 md:mb-0">
+              <img
+                src={country.flags.svg}
+                alt=""
+                className="w-full max-h-[350px]"
+              />
             </div>
 
             <div className="w-[50%]">
