@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { IoIosArrowRoundBack } from "react-icons/io"
 import Spinner from "./Spinner"
+import GetBorders from "./GetBorders"
 
 const CountryDetails = () => {
   const [country, setCountry] = useState(null)
@@ -29,7 +30,7 @@ const CountryDetails = () => {
   return (
     <div className="w-full">
       {country ? (
-        <section className="w-4/5 mx-auto">
+        <section className="w-4/5 max-w-6xl mx-auto">
           <div
             className="cursor-pointer w-28 p-2 text-center mb-8 rounded-lg shadow-lg flex justify-center gap-2 border-slate-600"
             onClick={handleBackBtn}
@@ -37,17 +38,17 @@ const CountryDetails = () => {
             <IoIosArrowRoundBack />
             Back
           </div>
-          <div className="w-4/5 md:flex md:justify-between">
+          <div className="md:flex md:justify-between">
             <div className="w-full md:w-[45%]">
               <img src={country.flags.svg} alt="" className="w-full" />
             </div>
 
             <div className="w-[50%]">
-              <h1 className="mb-4 text-6xl font-extrabold">
+              <h1 className="mb-4 text-3xl font-extrabold">
                 {country.name.common}
               </h1>
-              <div className="w-full md:flex md:justify-between">
-                <div className="w-[45%] flex flex-col ">
+              <div className="w-full  md:flex md:justify-between">
+                <div className="w-[45%] flex flex-col mb-8 md:mb-0">
                   <span className="mb-2">
                     <span className="mr-1 text-base font-bold ">
                       Native Name:
@@ -91,16 +92,17 @@ const CountryDetails = () => {
                   <span className="mb-2">
                     <span className="mr-1 text-base font-bold ">Languages</span>
                     <span className="text-base">
-                      {Object.values(country.languages)}{" "}
+                      {Object.values(country.languages).join(", ")}{" "}
                     </span>
                   </span>
                 </div>
               </div>
+              <GetBorders borders={country.borders} />
             </div>
           </div>
         </section>
       ) : (
-        <Spinner /> // Display loading message until data is available
+        <Spinner />
       )}
     </div>
   )
