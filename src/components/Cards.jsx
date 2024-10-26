@@ -9,7 +9,7 @@ const Cards = () => {
 
   return (
     <section
-      className={`max-w-[1150px] mx-auto grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4 ${
+      className={`max-w-[1150px] mx-auto grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ${
         isDark ? "bg-[#202C37]" : "bg-[#ffff]"
       }`}
     >

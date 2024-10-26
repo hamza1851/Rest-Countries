@@ -9,7 +9,7 @@ const SearchSection = () => {
   const { isDark } = useAppContext()
   return (
     <div
-      className={`max-w-6xl mb-12 mx-auto p-2 px-0 md:flex justify-between gap-4 md:gap-0 ${
+      className={`max-w-6xl mb-12 mx-auto p-2 px-0 md:flex flex-wrap sm:gap-4 justify-between ${
         isDark ? "bg-[#202C37]" : "bg-[#ffff]"
       }`}
     >
