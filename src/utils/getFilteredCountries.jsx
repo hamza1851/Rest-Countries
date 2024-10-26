@@ -10,7 +10,7 @@ export default function getFilteredCountries() {
     sortOrder,
   } = useAppContext()
 
-  let filteredCountries = countryData
+  let filteredCountries = [...countryData]
 
   // Filter by region and subregion
   if (selectedRegion) {
