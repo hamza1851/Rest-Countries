@@ -25,7 +25,7 @@ const CountryDetails = () => {
       }
     }
     fetchCountryData()
-  }, []) // Add id to dependency array
+  }, [id]) // Add id to dependency array
 
   return (
     <div className="w-full">
