@@ -28,7 +28,7 @@ export const AppProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchCountries = async () => {
-      const resp = await fetch("https://restcountries.com/v3.1/all")
+      const resp = await fetch(import.meta.env.VITE_API_URL)
       const data = await resp.json()
       setCountryData(data)
 
